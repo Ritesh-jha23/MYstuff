@@ -1,0 +1,17 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "myAdminUsername": {
+        "value": "MyAdministrator"
+      },
+      "myAdminPassword": {
+        "reference": {
+          "keyVault": {
+            "id": "/subscriptions/<sub>/resourceGroups/RG-Infra-SCUS/providers/Microsoft.KeyVault/vaults/SavKeyVault"
+          },
+          "secretName": "TestSecret"
+        }
+      }
+    }
+  }
